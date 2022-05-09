@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS sesh_db;
+CREATE DATABASE sesh_db;
