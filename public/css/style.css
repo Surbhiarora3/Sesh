@@ -1,0 +1,36 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-image: url('https://thumbs.gfycat.com/FrankShyApisdorsatalaboriosa-size_restricted.gif');
+    background-size: cover;
+    color: white;
+
+}
+
+main, footer {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    
+}
+
+.seshLogo {
+    height: 35vh;
+}
+
+.navbar-nav {
+    color: white;
+}
+
+#loginCard, #signupCard {
+    opacity: 0.4;
+}
+
+.card-body, .card-header, #login {
+    background-color: black;
+}
+
+.card-header h2, .card-body label, .card-body input, .card-body button {
+    opacity: 1 ;
+}
