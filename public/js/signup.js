@@ -13,7 +13,7 @@ document.querySelector("#signup").addEventListener("submit",e=>{
         }
     }).then(res=>{
         if(res.ok){
-            location.href="/playlist"
+            location.href="/mySesh"
         } else {
             alert("Please try again")
         }
