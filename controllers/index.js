@@ -4,8 +4,7 @@ const router = express.Router();
 const userRoutes = require("./userRoutes");
 router.use("/api/users",userRoutes)
 
-const playlistRoutes = require("./playlistRoutes");
-router.use("/api/playlist",playlistRoutes)
+
 const spotifyRoutes = require("./spotifyRoutes");
 router.use("/",spotifyRoutes)
 
