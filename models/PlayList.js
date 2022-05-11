@@ -13,6 +13,11 @@ PlayList.init({
         type:DataTypes.TEXT,
         allowNull:false
     },
+    url:{
+        type:DataTypes.STRING,
+        allowNull:false
+    }
+
 },
 {
     sequelize

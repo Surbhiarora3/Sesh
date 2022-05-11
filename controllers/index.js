@@ -6,6 +6,8 @@ router.use("/api/users",userRoutes)
 
 const playlistRoutes = require("./playlistRoutes");
 router.use("/api/playlist",playlistRoutes)
+const spotifyRoutes = require("./spotifyRoutes");
+router.use("/",spotifyRoutes)
 
 const frontEnd = require("./frontEndRoutes");
 router.use("/",frontEnd)
