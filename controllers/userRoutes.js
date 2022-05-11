@@ -3,34 +3,34 @@ const router = express.Router();
 const {User,PlayList} = require("../models");
 const bcrypt  = require("bcrypt");
 
-router.get('/',(req,res)=>{
-    User.findAll({
-        include:[PlayList]
-      })
-        .then(dbUsers => {
-          res.json(dbUsers);
-        })
-        .catch(err => {
-          console.log(err);
-          res.status(500).json({ msg: "an error occured", err });
-        });
-    });
+// router.get('/',(req,res)=>{
+//     User.findAll({
+//         include:[PlayList]
+//       })
+//         .then(dbUsers => {
+//           res.json(dbUsers);
+//         })
+//         .catch(err => {
+//           console.log(err);
+//           res.status(500).json({ msg: "an error occured", err });
+//         });
+//     });
     router.get("/logout",(req,res)=>{
       req.session.destroy();
       res.json('logout')
       res.redirect("/")
     })
 
-    router.get("/:id", (req, res) => {
-      User.findByPk(req.params.id,{})
-        .then(dbUser => {
-          res.json(dbUser);
-        })
-        .catch(err => {
-          console.log(err);
-          res.status(500).json({ msg: "an error occured", err });
-        });
-    });
+    // router.get("/:id", (req, res) => {
+    //   User.findByPk(req.params.id,{})
+    //     .then(dbUser => {
+    //       res.json(dbUser);
+    //     })
+    //     .catch(err => {
+    //       console.log(err);
+    //       res.status(500).json({ msg: "an error occured", err });
+    //     });
+    // });
     router.post("/signup", (req, res) => {
       User.create(req.body)
         .then(newUser => {
