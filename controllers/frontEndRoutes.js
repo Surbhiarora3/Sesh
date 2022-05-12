@@ -21,7 +21,7 @@ router.get("/mySesh",(req,res)=>{
         return res.redirect("/")
     }
     User.findByPk(req.session.user.id,{
-        include:[PlayList]
+        //include:[PlayList]
     }).then(userData=>{
         console.log(userData);
         const hbsData = userData.get({plain:true})
@@ -30,5 +30,6 @@ router.get("/mySesh",(req,res)=>{
         hbsData.loggedIn = req.session.user?true:false
         res.render("mySesh",hbsData)
     })
+    console.log('hello')
 })
 module.exports = router

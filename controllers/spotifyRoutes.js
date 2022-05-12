@@ -68,24 +68,53 @@ router.get('/callback', (req, res) => {
 });
 
 router.get('/api/playlist',(req,res)=>{
-  //PlayList.findAll(
+  
     console.log(currentToken)
     spotifyApi.setAccessToken(currentToken);
-    spotifyApi.searchPlaylists('workout')
-    .then(function(data) {
-      res.json(data.body.playlists.items)
-      console.log('Found playlists are', data.body.playlists.items);
-    }, function(err) {
-      console.log('Something went wrong!', err);
-    })
-  
-    //)
-      .catch(err => {
+    spotifyApi.searchTracks('Love')
+  .then(function(data) {
+    console.log('I got ' + data.body.tracks.total + ' results!');
+
+    // Go through the first page of results
+    // var firstPage = data.body.tracks.items;
+    res.json(data.body.tracks.href)
+    console.log('The tracks in the first page are (popularity in parentheses):');
+    // firstPage.forEach(function(track, index) {
+    //   console.log(index + ': ' + track.name + ' (' + track.popularity + ')');
+    }).catch(err => {
         console.log(err);
         res.status(500).json({ msg: "an error occured", err });
       });
   });
+// })
 
+
+router.post('/api/playlist',(req,res)=>{
+  console.log(currentToken)
+  spotifyApi.setAccessToken(currentToken);
+  spotifyApi.searchTracks('Love')
+.then(function(data) {
+  console.log('I got ' + data.body.tracks.total + ' results!');
+
+  // Go through the first page of results
+  // var firstPage = data.body.tracks.items;
+  res.json(data.body.tracks.href)
+  console.log('The tracks in the first page are (popularity in parentheses):');
+  // firstPage.forEach(function(track, index) {
+  //   console.log(index + ': ' + track.name + ' (' + track.popularity + ')');
+  PlayList.create({
+     title:data.body.tracks.href,
+     name:data.body.tracks.href,
+     url:data.body.tracks.href,
+  })
+  .then(newList =>{
+    res.json(newList)
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json({ msg: "an error occured", err });
+  });
+})
+})
 module.exports = router;
 
 
