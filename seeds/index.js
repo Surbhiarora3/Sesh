@@ -1,6 +1,8 @@
 const sequelize = require("../config/connection")
 const {User,PlayList} = require("../models")
 const spotify = require('../controllers/spotifyRoutes')
+
+
 const user =[{
     username:"myself",
     password:"password"

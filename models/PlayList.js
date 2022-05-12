@@ -9,7 +9,7 @@ PlayList.init({
         type:DataTypes.STRING,
         allowNull:false
     },
-    body:{
+    name:{
         type:DataTypes.TEXT,
         allowNull:false
     },
