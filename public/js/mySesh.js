@@ -139,7 +139,7 @@ const UIController = (function () {
         },
 
         // need method to create the song detail
-        createTrackDetail(img, title, artist,sample) {
+        createTrackDetail(id) {
 
             const detailDiv = document.querySelector(DOMElements.divSongDetail);
             // any time user clicks a new song, we need to clear out the song detail div
@@ -148,15 +148,10 @@ const UIController = (function () {
             const html =
                 `
             <div class="row col-sm-12 px-0">
-                <img src="${img}" alt="">        
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/${id}?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+            </iframe>      
             </div>
-            <div class="row col-sm-12 px-0">
-                <label for="Genre" class="form-label col-sm-12">${title}:</label>
-            </div>
-            <div class="row col-sm-12 px-0">
-                <label for="artist" class="form-label col-sm-12">By ${artist}:</label>
-            </div>
-            <a href="${sample}" target="_blank"><button>Preview</button></a>`;
+            `;
 
             detailDiv.insertAdjacentHTML('beforeend', html)
 
@@ -253,9 +248,9 @@ const APPController = (function (UICtrl, APICtrl) {
         const trackEndpoint = e.target.id;
         //get the track object
         const track = await APICtrl.getTrack(token, trackEndpoint);
-        console.log(track.preview_url)
+        console.log(track)
         // load the track details
-        UICtrl.createTrackDetail(track.album.images[2].url, track.name, track.artists[0].name,track.preview_url);
+        UICtrl.createTrackDetail(track.id);
         // window.open(track.preview_url)
     });
 
