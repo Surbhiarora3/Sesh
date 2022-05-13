@@ -5,8 +5,8 @@ const userRoutes = require("./userRoutes");
 router.use("/api/users",userRoutes)
 
 
-const spotifyRoutes = require("./spotifyRoutes");
-router.use("/",spotifyRoutes)
+// const spotifyRoutes = require("./spotifyRoutes");
+// router.use("/",spotifyRoutes)
 
 const frontEnd = require("./frontEndRoutes");
 router.use("/",frontEnd)
