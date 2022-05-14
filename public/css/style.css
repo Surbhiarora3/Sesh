@@ -25,6 +25,7 @@ main, footer {
 
 #loginCard, #signupCard {
     opacity: 0.4;
+    text-align: center;
 }
 
 .card-body, .card-header, #login {
@@ -34,3 +35,8 @@ main, footer {
 .card-header h2, .card-body label, .card-body input, .card-body button {
     opacity: 1 ;
 }
+
+#loginUsername, #loginPassword {
+    margin-left: 5em;
+}
+    
