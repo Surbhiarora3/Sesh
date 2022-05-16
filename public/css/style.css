@@ -1,9 +1,26 @@
+* {
+    text-decoration: none;
+    color: inherit;
+}
+
 body {
     font-family: 'Press Start 2P', cursive;
     background-image: url('https://thumbs.gfycat.com/FrankShyApisdorsatalaboriosa-size_restricted.gif');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: white;
+    display: flex;
+    flex-direction: column;
 
+    gap: 30px;
+
+}
+
+.button {
+    margin: 10px;
+    text-decoration: none;
+    color: white;
 }
 
 main, footer {
@@ -16,7 +33,16 @@ main, footer {
 }
 
 .seshLogo {
-    height: 35vh;
+    display: flex;
+    height:30vh;
+    
+}
+
+#seshLogoMySesh {
+    position: absolute;
+    height: 10vh;
+    top: 5vh;
+    right: 5vw;
 }
 
 .navbar-nav {
@@ -24,7 +50,7 @@ main, footer {
 }
 
 #loginCard, #signupCard {
-    opacity: 0.4;
+    opacity: 0.7;
 }
 
 .card-body, .card-header, #login {
@@ -33,4 +59,58 @@ main, footer {
 
 .card-header h2, .card-body label, .card-body input, .card-body button {
     opacity: 1 ;
+}
+
+#musicPlay {
+    flex-direction: row;
+}
+
+#playlistBox {
+    margin-top: 20px;
+    height: 50vh;
+    width: 40vw;
+    overflow: scroll;
+}
+
+
+@media screen and (max-width: 912px){
+    body {
+        background-image: url('https://c.tenor.com/Uz2tRqvAJP8AAAAM/pixel-art.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main, footer {
+        width: 80vw;
+    }
+
+    #searchEngine {
+        width: 80vw;
+    }
+
+    #seshLogoMySesh {
+        position: static;
+        height: 25vh;
+
+    }
+
+    #musicPlay {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #playlistBox {
+        width: 80vw;
+    }
+    
+    #song-detail {
+        width: 80vw;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
 }
