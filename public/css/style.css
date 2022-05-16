@@ -69,7 +69,7 @@ main, footer {
     margin-top: 20px;
     height: 50vh;
     width: 40vw;
-    overflow: scroll;
+    overflow:auto;
 }
 
 
